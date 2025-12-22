@@ -607,6 +607,51 @@ ul {
     color: #fff;
 }
 
+/* Our Categories Section */
+.our-categories-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.category-tabs {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tab-btn {
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    cursor: pointer;
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+    text-transform: capitalize;
+}
+
+.tab-btn.active {
+    background-color: #ff5252;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.tab-btn:hover {
+    color: #ff5252;
+}
+
+.tab-btn.active:hover {
+    color: #fff;
+}
+
+.category-products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
 /* Collections Banner Section */
 .collections-banner-section {
     padding: 0;
