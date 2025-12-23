@@ -44,6 +44,8 @@ ul {
     max-width: 1600px;
     /* Wide container */
     margin: 0 auto;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 /* Logo */
