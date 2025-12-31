@@ -6,7 +6,10 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
     background-color: #fff;
     color: #111;
 }
@@ -37,6 +40,7 @@ ul {
 }
 
 .container {
+    font-size:28px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,8 +48,8 @@ ul {
     max-width: 1600px;
     /* Wide container */
     margin: 0 auto;
-    margin-left: 40px;
-    margin-right: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 /* Logo */
@@ -355,7 +359,7 @@ ul {
 
 .section-title {
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     color: #111;
     margin-bottom: 10px;
@@ -491,10 +495,18 @@ ul {
     letter-spacing: 0.5px;
 }
 
-/* Products Section */
 .products-section {
     padding: 80px 0;
     background-color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .section-subtitle {
@@ -562,13 +574,32 @@ ul {
 }
 
 /* Add to Cart Button */
+.product-details-wrapper {
+    position: relative;
+    margin-top: 15px;
+    min-height: 80px;
+}
+
+.product-info {
+    transition: all 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-card:hover .product-info {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .add-to-cart-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    position: absolute;
+    top: 0;
+    left: 10px;
     width: calc(100% - 20px);
-    margin: 15px 10px 0 10px;
     background-color: #ff5252;
     color: #fff;
     text-align: center;
@@ -578,9 +609,10 @@ ul {
     text-transform: uppercase;
     letter-spacing: 1px;
     border-radius: 25px;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
     opacity: 0;
     pointer-events: none;
+    z-index: 5;
 }
 
 .add-to-cart-btn i {
@@ -626,9 +658,9 @@ ul {
 }
 
 .product-name {
-    font-size: 14px;
+    font-size: 16px;
     color: #111;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     line-height: 1.4;
     font-weight: 400;
 }
@@ -640,13 +672,13 @@ ul {
 }
 
 .old-price {
-    font-size: 13px;
+    font-size: 14px;
     color: #999;
     text-decoration: line-through;
 }
 
 .new-price {
-    font-size: 15px;
+    font-size: 16px;
     color: #111;
     font-weight: 600;
 }
@@ -949,7 +981,7 @@ ul {
 }
 
 .newsletter-title {
-    font-size: 2.5rem;
+    font-size: 28px;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 15px;
@@ -1126,3 +1158,4 @@ ul {
         bottom: 20px;
         right: 20px;
     }
+}
