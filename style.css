@@ -41,6 +41,12 @@ ul {
     /* Subtle separate if needed, though image doesn't clearly show one, good practice */
 }
 
+.main-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .container {
     width: 100%;
     max-width: 1440px;
@@ -49,6 +55,14 @@ ul {
     padding-left: 15px;
     /* Consistent inner padding */
     padding-right: 15px;
+}
+
+/* Header Left Container */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-grow: 1;
 }
 
 /* Logo */
