@@ -42,10 +42,6 @@ ul {
 }
 
 .container {
-    font-size: 28px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     max-width: 1440px;
     /* Reference site standard */
@@ -652,10 +648,10 @@ ul {
 }
 
 .product-name {
-    font-size: 16px;
-    color: #111;
+    font-size: 15px;
+    color: #666;
     margin-bottom: 12px;
-    line-height: 1.4;
+    line-height: 1.5;
     font-weight: 400;
 }
 
@@ -807,18 +803,17 @@ ul {
 
 /* Services Section */
 .services-section {
-    padding: 0;
+    padding: 60px 0;
     background-color: #fff;
-    border-top: 1px solid #e1e1e1;
-    border-bottom: 1px solid #e1e1e1;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0;
-    padding: 40px 0;
-    max-width: 100%;
+    padding: 50px 15px;
+    border: 1px solid #e1e1e1;
+    background-color: #fff;
 }
 
 .service-item {
@@ -827,7 +822,8 @@ ul {
     justify-content: center;
     gap: 20px;
     padding: 0 20px;
-    border-right: 1px solid #e1e1e1;
+    border-right: none;
+    /* Removed internal borders */
 }
 
 .service-item:last-child {
@@ -835,9 +831,11 @@ ul {
 }
 
 .service-icon {
-    font-size: 40px;
+    font-size: 50px;
     color: #333;
     line-height: 1;
+    display: flex;
+    align-items: center;
 }
 
 .service-content {
