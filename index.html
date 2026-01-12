@@ -16,6 +16,9 @@
 
     <header class="main-header">
         <div class="container">
+            <!-- Hidden checkbox for menu toggle (CSS-only solution) -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+
             <div class="header-left">
                 <!-- Logo -->
                 <a href="#" class="logo">
@@ -59,6 +62,11 @@
                 <div class="icon-item user-icon">
                     <i class="ri-user-line"></i>
                 </div>
+
+                <!-- Hamburger menu label (visible on mobile only) -->
+                <label for="menu-toggle" class="menu-toggle-label">
+                    <span class="hamburger-icon"></span>
+                </label>
             </div>
         </div>
     </header>

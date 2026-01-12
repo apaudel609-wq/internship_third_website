@@ -1133,6 +1133,74 @@ ul {
     transform: translateY(0);
 }
 
+/* ========================================
+   HAMBURGER MENU - CSS ONLY (NO JAVASCRIPT)
+   ======================================== */
+
+/* Hide the checkbox (used for state management) */
+.menu-toggle-checkbox {
+    display: none;
+}
+
+/* Hamburger menu label - hidden by default, shown on mobile */
+.menu-toggle-label {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: 100;
+}
+
+/* Hamburger icon bars */
+.hamburger-icon,
+.hamburger-icon::before,
+.hamburger-icon::after {
+    width: 100%;
+    height: 3px;
+    background-color: #222;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+.hamburger-icon {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-icon::before {
+    content: '';
+    top: -10px;
+}
+
+.hamburger-icon::after {
+    content: '';
+    top: 10px;
+}
+
+/* Hamburger animation when checkbox is checked */
+.menu-toggle-checkbox:checked~.header-icons .menu-toggle-label .hamburger-icon {
+    background-color: transparent;
+}
+
+.menu-toggle-checkbox:checked~.header-icons .menu-toggle-label .hamburger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu-toggle-checkbox:checked~.header-icons .menu-toggle-label .hamburger-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Show/hide menu based on checkbox state */
+.menu-toggle-checkbox:checked~.header-left .navbar {
+    display: block !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .newsletter-title {
@@ -1167,5 +1235,425 @@ ul {
         height: 45px;
         bottom: 20px;
         right: 20px;
+    }
+}
+
+/* Tablet & Small Desktop */
+@media (max-width: 1024px) {
+
+    /* Header adjustments */
+    .nav-list {
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    /* Hero section */
+    .main-title {
+        font-size: 48px;
+    }
+
+    .hero-content {
+        padding-left: 30px;
+    }
+
+    /* Product grids - 4 columns */
+    .products-grid,
+    .category-products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    /* Categories - 3 columns */
+    .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Services - 2 rows */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 40px 15px;
+    }
+
+    .service-item {
+        border-right: none;
+        border-bottom: 1px solid #e1e1e1;
+        padding: 20px;
+    }
+
+    .service-item:nth-child(3),
+    .service-item:nth-child(4) {
+        border-bottom: none;
+    }
+
+    /* Brands - 3 columns */
+    .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    /* Container padding */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Header - Make navigation vertical or hamburger menu */
+    .main-header .container {
+        flex-wrap: wrap;
+    }
+
+    .header-left {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    /* Show hamburger menu on tablet/mobile */
+    .menu-toggle-label {
+        display: flex;
+    }
+
+    .navbar {
+        display: none;
+        width: 100%;
+        order: 3;
+    }
+
+    /* Show menu when checkbox is checked */
+    .menu-toggle-checkbox:checked~.header-left .navbar {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .header-icons {
+        order: 2;
+    }
+
+    /* Hero section */
+    .hero-section {
+        min-height: 400px;
+    }
+
+    .hero-wrapper {
+        min-height: 400px;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        max-width: 100%;
+    }
+
+    .main-title {
+        font-size: 36px;
+    }
+
+    .sub-title {
+        font-size: 16px;
+    }
+
+    /* Banner grid - stack vertically */
+    .banner-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Categories - 2 columns */
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* Products - 3 columns */
+    .products-grid,
+    .category-products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 24px;
+    }
+
+    /* Collections banner - stack */
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-item {
+        height: 300px;
+    }
+
+    /* Promo banner */
+    .promo-banner {
+        height: 350px;
+    }
+
+    .promo-content {
+        right: 30px;
+        max-width: 400px;
+    }
+
+    .promo-title {
+        font-size: 36px;
+    }
+
+    /* Category tabs */
+    .category-tabs {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .tab-btn {
+        width: 200px;
+        text-align: center;
+    }
+
+    /* Services - single column */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-item {
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .service-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Brands - 2 columns */
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    /* Typography adjustments */
+    body {
+        font-size: 13px;
+    }
+
+    /* Container */
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Logo */
+    .logo {
+        font-size: 24px;
+    }
+
+    /* Header icons */
+    .header-icons {
+        gap: 15px;
+    }
+
+    .icon-item {
+        font-size: 20px;
+    }
+
+    /* Hero section */
+    .hero-section {
+        min-height: 350px;
+    }
+
+    .hero-wrapper {
+        min-height: 350px;
+    }
+
+    .hero-content {
+        padding-left: 15px;
+    }
+
+    .main-title {
+        font-size: 28px;
+    }
+
+    .sub-title {
+        font-size: 14px;
+    }
+
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 12px;
+    }
+
+    /* Section titles */
+    .section-title {
+        font-size: 20px;
+    }
+
+    .section-title::after {
+        width: 40px;
+        height: 2px;
+    }
+
+    /* Categories - 1 column */
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Products - 2 columns */
+    .products-grid,
+    .category-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product-name {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .old-price {
+        font-size: 12px;
+    }
+
+    .new-price {
+        font-size: 14px;
+    }
+
+    /* Hide product actions on mobile for better UX */
+    .product-actions {
+        display: none;
+    }
+
+    /* Always show add to cart button on mobile */
+    .add-to-cart-btn {
+        opacity: 1;
+        pointer-events: auto;
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 11px;
+        padding: 10px 0;
+    }
+
+    .product-info {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* Banner overlays - adjust */
+    .banner-hover-overlay {
+        opacity: 1;
+        visibility: visible;
+        width: 80%;
+        padding: 30px 20px;
+    }
+
+    .banner-hover-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .banner-hover-btn {
+        padding: 10px 25px;
+        font-size: 11px;
+    }
+
+    /* Collections */
+    .collection-item {
+        height: 250px;
+    }
+
+    .collection-overlay {
+        left: 20px;
+    }
+
+    .collection-title {
+        font-size: 24px;
+    }
+
+    .collection-btn {
+        padding: 10px 20px;
+        font-size: 11px;
+    }
+
+    /* Promo banner */
+    .promo-banner {
+        height: 300px;
+    }
+
+    .promo-content {
+        right: 20px;
+        left: 20px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .promo-title {
+        font-size: 28px;
+    }
+
+    .promo-subtitle,
+    .promo-description,
+    .promo-highlight {
+        font-size: 12px;
+    }
+
+    /* Category tabs */
+    .tab-btn {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    /* Testimonials */
+    .testimonial-text {
+        font-size: 14px;
+    }
+
+    /* Services */
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .service-content {
+        text-align: center;
+    }
+
+    .service-icon {
+        font-size: 40px;
+    }
+
+    /* Brands - 2 columns on mobile */
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 40px 0;
+    }
+
+    /* Newsletter */
+    .newsletter-section {
+        padding: 60px 15px 30px;
+    }
+
+    .newsletter-title {
+        font-size: 22px;
+    }
+
+    .newsletter-subtitle {
+        font-size: 14px;
     }
 }
