@@ -135,6 +135,123 @@ ul {
     color: #ff5252;
 }
 
+/* Dropdown Menu */
+.nav-item {
+    position: relative;
+    padding-bottom: 5px;
+    /* Increase hover area */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    list-style: none;
+    padding: 15px 0;
+    margin: 0;
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1000;
+    border-radius: 2px;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    border-bottom: none;
+    /* Removed borders for a cleaner look as per image */
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 25px;
+    color: #444;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: none;
+    /* Inherit normal case */
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: transparent;
+    color: #ff5252;
+    padding-left: 30px;
+}
+
+/* Mega Menu Specifically for SHOP */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-20%) translateY(15px);
+    /* Offset slightly from center to fit layout */
+    background-color: #ffffff;
+    min-width: 650px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1000;
+    border-radius: 2px;
+}
+
+.nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-20%) translateY(0);
+}
+
+.mega-menu-column {
+    flex: 1;
+}
+
+.mega-menu-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    display: block;
+}
+
+.mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mega-menu-column ul li {
+    margin-bottom: 12px;
+}
+
+.mega-menu-column ul li a {
+    font-size: 15px;
+    color: #555;
+    font-weight: 400;
+    text-transform: none;
+    transition: all 0.3s ease;
+}
+
+.mega-menu-column ul li a:hover {
+    color: #ff5252;
+    padding-left: 5px;
+}
 
 /* Icons */
 .header-icons {
